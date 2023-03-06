@@ -26,274 +26,11 @@ interface MultiplicationQuestion {
 }
 
 function App() {
-  const [abacusQuestions, setAbacusQuestions] = useState<Question[]>([
-    {
-      id: 1,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 2,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 3,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 4,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 5,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 6,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 7,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 8,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 9,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 10,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 11,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 12,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 13,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 14,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 15,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 16,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-  ]);
-  const [visualQuestions, setVisualQuestions] = useState<Question[]>([
-    {
-      id: 1,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 2,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 3,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 4,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 5,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 6,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 7,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 8,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 9,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 10,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 11,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 12,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 13,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 14,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 15,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 16,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 17,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 18,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 19,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 20,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 21,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 22,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 23,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-    {
-      id: 24,
-      numbers: [89, 99, -89, 98],
-      answer: 197,
-    },
-  ]);
+  const [abacusQuestions, setAbacusQuestions] = useState<Question[]>([]);
+  const [visualQuestions, setVisualQuestions] = useState<Question[]>([]);
   const [multiplicationQuestions, setMultiplicationQuestions] = useState<
     MultiplicationQuestion[]
-  >([
-    {
-      id: 1,
-      firstNumber: 90,
-      secondNumber: 9,
-      answer: 810,
-    },
-    {
-      id: 2,
-      firstNumber: 123,
-      secondNumber: 8,
-      answer: 984,
-    },
-    {
-      id: 3,
-      firstNumber: 123,
-      secondNumber: 435,
-      answer: 53505,
-    },
-    {
-      id: 4,
-      firstNumber: 212,
-      secondNumber: 87,
-      answer: 18444,
-    },
-    {
-      id: 5,
-      firstNumber: 145,
-      secondNumber: 9,
-      answer: 1305,
-    },
-    {
-      id: 6,
-      firstNumber: 98,
-      secondNumber: 9,
-      answer: 882,
-    },
-    {
-      id: 7,
-      firstNumber: 212,
-      secondNumber: 212,
-      answer: 44944,
-    },
-    {
-      id: 8,
-      firstNumber: 212,
-      secondNumber: 212,
-      answer: 44944,
-    },
-    {
-      id: 9,
-      firstNumber: 212,
-      secondNumber: -1,
-      answer: -212,
-    },
-    {
-      id: 10,
-      firstNumber: 212,
-      secondNumber: 3,
-      answer: 636,
-    },
-  ]);
+  >([]);
 
   const calculateAbacusAnswer = (abacusQuestion: Question) => {
     const value = document.getElementById(
@@ -350,8 +87,6 @@ function App() {
 
     value.value = "";
     value.focus();
-
-    console.log(answer);
   };
 
   const removeAbacusNumber = (abacusQuestion: Question, index: number) => {
@@ -386,6 +121,54 @@ function App() {
       })
     );
   };
+
+  const handleKeyDown = (event: any) => {
+    console.log(event.keyCode);
+    if (event.keyCode === 112) {
+      event.preventDefault();
+      setAbacusQuestions([
+        ...abacusQuestions,
+        {
+          id: abacusQuestions.length + 1,
+          numbers: [],
+          answer: 0,
+        },
+      ]);
+    } else if (event.keyCode === 113) {
+      event.preventDefault();
+      setVisualQuestions([
+        ...visualQuestions,
+        {
+          id: visualQuestions.length + 1,
+          numbers: [],
+          answer: 0,
+        },
+      ]);
+    } else if (event.keyCode === 114) {
+      event.preventDefault();
+      setMultiplicationQuestions([
+        ...multiplicationQuestions,
+        {
+          id: multiplicationQuestions.length + 1,
+          firstNumber: 0,
+          secondNumber: 0,
+          answer: 0,
+        },
+      ]);
+    } else if (event.keyCode === 115) {
+      event.preventDefault();
+      setAbacusQuestions([]);
+      setVisualQuestions([]);
+      setMultiplicationQuestions([]);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown, false);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown, false);
+    };
+  }, [abacusQuestions, visualQuestions, multiplicationQuestions]);
 
   const calculateVisualAnswer = (visualQuestion: Question) => {
     const value = document.getElementById(
