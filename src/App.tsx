@@ -938,7 +938,7 @@ function App() {
               ))}
             </View>
             {/* show the random quote */}
-            <View
+            {/* <View
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -950,7 +950,7 @@ function App() {
               <Text style={{ fontSize: 12 }}>
                 {randomQuote.text} - {randomQuote.author}
               </Text>
-            </View>
+            </View> */}
           </View>
         </Page>
       </Document>
