@@ -1156,20 +1156,20 @@ function App() {
                       type="number"
                       className="w-[50%] ring-1 ring-blue-500 px-1 outline-none"
                       id={`multiplication_question_${multiplicationQuestion.id}_first_number`}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter") {
-                          calculateMultiplicationAnswer(multiplicationQuestion);
-                        }
+                      onKeyUp={(event) => {
+                        // if (event.key === "Enter") {
+                        calculateMultiplicationAnswer(multiplicationQuestion);
+                        // }
                       }}
                     />
                     <input
                       type="number"
                       className="w-[50%] ring-1 ring-blue-500 px-1  outline-none"
                       id={`multiplication_question_${multiplicationQuestion.id}_second_number`}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter") {
-                          calculateMultiplicationAnswer(multiplicationQuestion);
-                        }
+                      onKeyUp={(event) => {
+                        // if (event.key === "Enter") {
+                        calculateMultiplicationAnswer(multiplicationQuestion);
+                        // }
                       }}
                     />
 
