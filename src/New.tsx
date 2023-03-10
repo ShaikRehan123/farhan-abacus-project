@@ -10,9 +10,9 @@ import {
   pdf,
   Font,
 } from "@react-pdf/renderer";
+import { useNavigate } from "react-router-dom";
 
 import { saveAs } from "file-saver";
-import { useNavigate } from "react-router-dom";
 
 interface Question {
   id: number;
@@ -32,7 +32,7 @@ interface Quote {
   author: string;
 }
 
-function App() {
+function New() {
   const [abacusQuestions, setAbacusQuestions] = useState<Question[]>([
     {
       id: 1,
@@ -196,46 +196,6 @@ function App() {
       numbers: [28, 27, -7, 90, 78],
       answer: 145,
     },
-    {
-      id: 17,
-      numbers: [28, 27, -7, 90, 78],
-      answer: 145,
-    },
-    {
-      id: 18,
-      numbers: [28, 27, -7, 90, 78],
-      answer: 145,
-    },
-    {
-      id: 19,
-      numbers: [28, 27, -7, 90, 78],
-      answer: 145,
-    },
-    {
-      id: 20,
-      numbers: [28, 27, -7, 90, 78],
-      answer: 145,
-    },
-    {
-      id: 21,
-      numbers: [28, 27, -7, 90, 78],
-      answer: 145,
-    },
-    {
-      id: 22,
-      numbers: [28, 27, -7, 90, 78],
-      answer: 145,
-    },
-    {
-      id: 23,
-      numbers: [28, 27, -7, 90, 78],
-      answer: 145,
-    },
-    {
-      id: 24,
-      numbers: [28, 27, -7, 90, 78],
-      answer: 145,
-    },
   ]);
   const [multiplicationQuestions, setMultiplicationQuestions] = useState<
     MultiplicationQuestion[]
@@ -301,6 +261,69 @@ function App() {
       answer: 660,
     },
   ]);
+  const [visualMultiplicationQuestions, setVisualMultiplicationQuestions] =
+    useState<MultiplicationQuestion[]>([
+      {
+        id: 1,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 2,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 3,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 4,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 5,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 6,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 7,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 8,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 9,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 10,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+    ]);
   const [randomQuote, setRandomQuote] = useState<Quote>({} as Quote);
 
   const getRandomQuote = () => {
@@ -440,10 +463,27 @@ function App() {
         },
       ]);
     } else if (event.keyCode === 115) {
+      // event.preventDefault();
+      // setAbacusQuestions([]);
+      // setVisualQuestions([]);
+      // setMultiplicationQuestions([]);
+      event.preventDefault();
+      setVisualMultiplicationQuestions([
+        ...visualMultiplicationQuestions,
+        {
+          id: visualMultiplicationQuestions.length + 1,
+          firstNumber: 0,
+
+          secondNumber: 0,
+          answer: 0,
+        },
+      ]);
+    } else if (event.keyCode === 116) {
       event.preventDefault();
       setAbacusQuestions([]);
       setVisualQuestions([]);
       setMultiplicationQuestions([]);
+      setVisualMultiplicationQuestions([]);
     }
   };
 
@@ -576,6 +616,46 @@ function App() {
     setMultiplicationQuestions(
       multiplicationQuestions.filter((multiplicationQuestion) => {
         return multiplicationQuestion.id !== id;
+      })
+    );
+  };
+
+  const calculateVisualMultiplicationAnswer = (
+    visualMultiplicationQuestion: MultiplicationQuestion
+  ) => {
+    const firstNumber = document.getElementById(
+      `visual_multiplication_question_${visualMultiplicationQuestion.id}_first_number`
+    ) as HTMLInputElement;
+    const secondNumber = document.getElementById(
+      `visual_multiplication_question_${visualMultiplicationQuestion.id}_second_number`
+    ) as HTMLInputElement;
+
+    if (!firstNumber.value || !secondNumber.value) return;
+
+    const answer = parseInt(firstNumber.value) * parseInt(secondNumber.value);
+
+    setVisualMultiplicationQuestions(
+      visualMultiplicationQuestions.map((visualMultiplicationQuestionItem) => {
+        if (
+          visualMultiplicationQuestionItem.id ===
+          visualMultiplicationQuestion.id
+        ) {
+          return {
+            ...visualMultiplicationQuestionItem,
+            firstNumber: parseInt(firstNumber.value),
+            secondNumber: parseInt(secondNumber.value),
+            answer: answer,
+          };
+        }
+        return visualMultiplicationQuestionItem;
+      })
+    );
+  };
+
+  const removeVisualMultiplicationQuestion = (id: number) => {
+    setVisualMultiplicationQuestions(
+      visualMultiplicationQuestions.filter((visualMultiplicationQuestion) => {
+        return visualMultiplicationQuestion.id !== id;
       })
     );
   };
@@ -857,95 +937,243 @@ function App() {
             </View>
           </View>
           <View style={styles.secondPart}>
-            <Text style={styles.header}>Visual</Text>
+            <View>
+              <Text style={styles.header}>Visual</Text>
+              <View
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  flexDirection: "row",
+                  rowGap: 10,
+                  columnGap: 10,
+                  padding: 10,
+                }}
+              >
+                {visualQuestions.map((abacusQuestion, index) => (
+                  <View
+                    key={abacusQuestion.id}
+                    style={{
+                      width: "40px",
+                      backgroundColor: "white",
+                      color: "white",
+                    }}
+                  >
+                    <View
+                      style={{
+                        backgroundColor: "gray",
+                        color: "white",
+                        border: "2px solid black",
+                        fontSize: 12,
+                      }}
+                    >
+                      <Text style={{ textAlign: "center" }}>{index + 1}</Text>
+                    </View>
+                    <View
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        // padding: 10,
+                        border: "2px solid black",
+                        // justifyContent: "flex-end",
+                        alignItems: "flex-end",
+                        paddingRight: 10,
+                        paddingLeft: 10,
+                      }}
+                    >
+                      {abacusQuestion.numbers.map((number, numberIndex) => (
+                        <View
+                          key={numberIndex}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            fontSize: 15,
+                            // textAlign: "right",
+                            // alignItems: "flex-end",
+                            // justifyContent: "flex-end",
+                            color: "black",
+                          }}
+                        >
+                          <Text>{number}</Text>
+                        </View>
+                      ))}
+                    </View>
+                    <View
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        backgroundColor: "white",
+                        border: "2px solid black",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "blue",
+                        fontSize: 13,
+                      }}
+                    >
+                      <Text>{abacusQuestion.answer}</Text>
+                    </View>
+                  </View>
+                ))}
+              </View>
+            </View>
             <View
               style={{
-                display: "flex",
-                flexWrap: "wrap",
-                flexDirection: "row",
-                rowGap: 10,
-                columnGap: 10,
-                padding: 10,
+                borderBottom: "2px solid black",
               }}
-            >
-              {visualQuestions.map((abacusQuestion, index) => (
+            ></View>
+            <View>
+              <Text style={{ ...styles.header, width: "150px" }}>
+                Multiplications
+              </Text>
+              <View
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  flexDirection: "row",
+                  // rowGap: 10,
+                  // columnGap: 10,
+                }}
+              >
+                {/* show half questions left and half questions right */}
                 <View
-                  key={abacusQuestion.id}
                   style={{
-                    width: "40px",
-                    backgroundColor: "white",
-                    color: "white",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    flexDirection: "column",
+                    rowGap: 5,
+                    columnGap: 10,
+                    padding: 10,
+                    flex: 1,
                   }}
                 >
-                  <View
-                    style={{
-                      backgroundColor: "gray",
-                      color: "white",
-                      border: "2px solid black",
-                      fontSize: 12,
-                    }}
-                  >
-                    <Text style={{ textAlign: "center" }}>{index + 1}</Text>
-                  </View>
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      // padding: 10,
-                      border: "2px solid black",
-                      paddingRight: 10,
-                      paddingLeft: 10,
-                    }}
-                  >
-                    {abacusQuestion.numbers.map((number, numberIndex) => (
+                  {visualMultiplicationQuestions
+                    .slice(0, multiplicationQuestions.length / 2)
+                    .map((multiplicationQuestion, index) => (
                       <View
-                        key={numberIndex}
+                        key={multiplicationQuestion.id}
                         style={{
                           display: "flex",
                           flexDirection: "row",
-                          fontSize: 15,
-                          // textAlign: "right",
-                          // alignItems: "flex-end",
-                          justifyContent: "flex-end",
-                          color: "black",
+                          border: "1px solid black",
+                          // padding: 10,
+                          width: "100%",
                         }}
                       >
-                        <Text>{number}</Text>
+                        <View
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "20px",
+
+                            borderRight: "1px solid black",
+                            // padding: 10,
+                            fontSize: 12,
+                            backgroundColor: "gray",
+                            color: "white",
+                          }}
+                        >
+                          <Text>{index + 1}</Text>
+                        </View>
+                        <View
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            flexGrow: 1,
+                            padding: 8,
+                            fontSize: 12,
+                            justifyContent: "center",
+                            // rowGap: 5,
+                            // color: "blue",
+                          }}
+                        >
+                          <Text>{multiplicationQuestion.firstNumber}</Text>
+                          <Text> X </Text>
+                          <Text>{multiplicationQuestion.secondNumber}</Text>
+                          <Text> = </Text>
+                          <Text
+                            style={{
+                              color: "blue",
+                            }}
+                          >
+                            {multiplicationQuestion.answer}
+                          </Text>
+                        </View>
                       </View>
                     ))}
-                  </View>
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      backgroundColor: "white",
-                      color: "blue",
-                      fontWeight: "bold",
-                      border: "2px solid black",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      fontSize: 13,
-                    }}
-                  >
-                    <Text>{abacusQuestion.answer}</Text>
-                  </View>
                 </View>
-              ))}
+                <View
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    flexDirection: "column",
+                    rowGap: 5,
+                    columnGap: 10,
+                    padding: 10,
+                    flex: 1,
+                  }}
+                >
+                  {visualMultiplicationQuestions
+                    .slice(multiplicationQuestions.length / 2)
+                    .map((multiplicationQuestion, index) => (
+                      <View
+                        key={multiplicationQuestion.id}
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          border: "1px solid black",
+                          // padding: 10,
+                          width: "100%",
+                          // justifyContent: "center",
+                          // alignItems: "center",
+                        }}
+                      >
+                        <View
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "20px",
+                            borderRight: "1px solid black",
+                            // padding: 10,
+                            fontSize: 12,
+                            backgroundColor: "gray",
+                            color: "white",
+                          }}
+                        >
+                          <Text>
+                            {multiplicationQuestions.length / 2 + index + 1}
+                          </Text>
+                        </View>
+                        <View
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            flexGrow: 1,
+                            padding: 8,
+                            fontSize: 12,
+                            justifyContent: "center",
+                            // color: "blue",
+                          }}
+                        >
+                          <Text>{multiplicationQuestion.firstNumber}</Text>
+                          <Text> X </Text>
+                          <Text>{multiplicationQuestion.secondNumber}</Text>
+                          <Text> = </Text>
+                          <Text
+                            style={{
+                              color: "blue",
+                            }}
+                          >
+                            {multiplicationQuestion.answer}
+                          </Text>
+                        </View>
+                      </View>
+                    ))}
+                </View>
+              </View>
             </View>
-            {/* show the random quote */}
-            {/* <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: 10,
-              }}
-            >
-              <Text style={{ fontSize: 12 }}>
-                {randomQuote.text} - {randomQuote.author}
-              </Text>
-            </View> */}
           </View>
         </Page>
       </Document>
@@ -963,10 +1191,10 @@ function App() {
           onClick={() => {
             // go to /
             // history.go("/");
-            navigate("/new");
+            navigate("/");
           }}
         >
-          New Format
+          Old Format
         </button>
         <div className="main-content">
           <div className="abacus_questions">
@@ -1142,7 +1370,7 @@ function App() {
             </button>
           </div>
           <div className="multiplication_questions mt-4">
-            <h3 className="text-2xl pl-2 pt-2">Multiplication</h3>
+            <h3 className="text-2xl pl-2 pt-2">Abacus Multiplication</h3>
             <div className="multiplication_questions_list grid grid-cols-1 gap-4 mx-2 my-2 md:grid-cols-3 lg:grid-cols-4">
               {multiplicationQuestions.map((multiplicationQuestion) => (
                 <div
@@ -1233,6 +1461,122 @@ function App() {
               Add Question
             </button>
           </div>
+          <div className="multiplication_questions mt-4">
+            <h3 className="text-2xl pl-2 pt-2">Visual Multiplication</h3>
+            <div className="multiplication_questions_list grid grid-cols-1 gap-4 mx-2 my-2 md:grid-cols-3 lg:grid-cols-4">
+              {visualMultiplicationQuestions.map((multiplicationQuestion) => (
+                <div
+                  className="multiplication_question bg-white p-2 rounded-md shadow-md relative space-y-2"
+                  key={multiplicationQuestion.id}
+                >
+                  <div className="bg-pink-400 text-white  px-2 rounded-md shadow-md flex items-center">
+                    <span className="flex-1">
+                      {multiplicationQuestion.firstNumber}
+                    </span>
+                    <span className="flex-1">X</span>
+                    <span className="flex-1">
+                      {multiplicationQuestion.secondNumber}
+                    </span>
+                  </div>
+                  <div className="multiplication_question_input ring-1 ring-blue-500 rounded-md p-1 outline-none focus:ring-2 focus:ring-blue-800 transition-all">
+                    <input
+                      type="number"
+                      className="w-[50%] ring-1 ring-blue-500 px-1 outline-none"
+                      id={`visual_multiplication_question_${multiplicationQuestion.id}_first_number`}
+                      onKeyUp={(event) => {
+                        // if (event.key === "Enter") {
+                        calculateVisualMultiplicationAnswer(
+                          multiplicationQuestion
+                        );
+                        // }
+                      }}
+                    />
+                    <input
+                      type="number"
+                      className="w-[50%] ring-1 ring-blue-500 px-1  outline-none"
+                      id={`visual_multiplication_question_${multiplicationQuestion.id}_second_number`}
+                      onKeyUp={(event) => {
+                        // if (event.key === "Enter") {
+                        calculateVisualMultiplicationAnswer(
+                          multiplicationQuestion
+                        );
+                        // }
+                      }}
+                    />
+
+                    <button
+                      className="bg-blue-500 mt-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+                      onClick={() =>
+                        calculateVisualMultiplicationAnswer(
+                          multiplicationQuestion
+                        )
+                      }
+                    >
+                      Multiply
+                    </button>
+                  </div>
+
+                  <div className="multiplication_question_answer border-4 border-blue-500 flex justify-center py-3 items-center rounded-md">
+                    <span className="multiplication_question_answer_label text-xl">
+                      Answer:
+                    </span>
+                    <span className="multiplication_question_answer_value text-xl">
+                      {multiplicationQuestion.answer}
+                    </span>
+                  </div>
+                  <button
+                    className="multiplication_question_delete absolute -top-5 -right-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full "
+                    onClick={() => {
+                      removeVisualMultiplicationQuestion(
+                        multiplicationQuestion.id
+                      );
+                    }}
+                  >
+                    X
+                  </button>
+                </div>
+              ))}
+            </div>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() => {
+                // setMultiplicationQuestions([
+                //   ...multiplicationQuestions,
+                //   {
+                //     id: multiplicationQuestions.length + 1,
+                //     firstNumber: 0,
+                //     secondNumber: 0,
+                //     answer: 0,
+                //   },
+                // ]);
+                // document
+                //   .getElementById(
+                //     `multiplication_question_${
+                //       multiplicationQuestions.length + 1
+                //     }_first_number`
+                //   )
+                //   ?.focus();
+                setVisualMultiplicationQuestions([
+                  ...visualMultiplicationQuestions,
+                  {
+                    id: visualMultiplicationQuestions.length + 1,
+                    firstNumber: 0,
+                    secondNumber: 0,
+                    answer: 0,
+                  },
+                ]);
+                document
+                  .getElementById(
+                    `visual_multiplication_question_${
+                      visualMultiplicationQuestions.length + 1
+                    }_first_number`
+                  )
+                  ?.focus();
+              }}
+            >
+              Add Question
+            </button>
+          </div>
         </div>
         <div className="flex justify-center space-x-2">
           <button
@@ -1241,6 +1585,7 @@ function App() {
               setVisualQuestions([]);
               setMultiplicationQuestions([]);
               setAbacusQuestions([]);
+              setVisualMultiplicationQuestions([]);
             }}
           >
             Clear
@@ -1265,4 +1610,4 @@ function App() {
   );
 }
 
-export default App;
+export default New;
