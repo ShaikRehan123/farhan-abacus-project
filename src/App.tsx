@@ -952,6 +952,347 @@ function App() {
     );
   };
 
+  const MyPDfWithoutAnswers = () => {
+    return (
+      <Document>
+        <Page size={"A4"} orientation="landscape" style={styles.page}>
+          <View style={styles.firstPart}>
+            <View>
+              <Text style={styles.header}>Abacus</Text>
+              <View
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  flexDirection: "row",
+                  rowGap: 10,
+                  columnGap: 10,
+                  padding: 10,
+                }}
+              >
+                {abacusQuestions.map((abacusQuestion, index) => (
+                  <View
+                    key={abacusQuestion.id}
+                    style={{
+                      width: "40px",
+                      backgroundColor: "white",
+                      color: "white",
+                    }}
+                  >
+                    <View
+                      style={{
+                        backgroundColor: "gray",
+                        color: "white",
+                        border: "2px solid black",
+                        fontSize: 12,
+                      }}
+                    >
+                      <Text style={{ textAlign: "center" }}>{index + 1}</Text>
+                    </View>
+                    <View
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        // padding: 10,
+                        border: "2px solid black",
+                        // justifyContent: "flex-end",
+                        alignItems: "flex-end",
+                        paddingRight: 10,
+                        paddingLeft: 10,
+                      }}
+                    >
+                      {abacusQuestion.numbers.map((number, numberIndex) => (
+                        <View
+                          key={numberIndex}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            fontSize: 15,
+                            // textAlign: "right",
+                            // alignItems: "flex-end",
+                            // justifyContent: "flex-end",
+                            color: "black",
+                          }}
+                        >
+                          <Text>{number}</Text>
+                        </View>
+                      ))}
+                    </View>
+                    <View
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        backgroundColor: "white",
+                        border: "2px solid black",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "blue",
+                        fontSize: 13,
+                      }}
+                    >
+                      <Text>&nbsp;</Text>
+                    </View>
+                  </View>
+                ))}
+              </View>
+            </View>
+            <View
+              style={{
+                borderBottom: "2px solid black",
+              }}
+            ></View>
+            <View>
+              <Text style={{ ...styles.header, width: "150px" }}>
+                Multiplications
+              </Text>
+              <View
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  flexDirection: "row",
+                  // rowGap: 10,
+                  // columnGap: 10,
+                }}
+              >
+                {/* show half questions left and half questions right */}
+                <View
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    flexDirection: "column",
+                    rowGap: 5,
+                    columnGap: 10,
+                    padding: 10,
+                    flex: 1,
+                  }}
+                >
+                  {multiplicationQuestions
+                    .slice(0, multiplicationQuestions.length / 2)
+                    .map((multiplicationQuestion, index) => (
+                      <View
+                        key={multiplicationQuestion.id}
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          border: "1px solid black",
+                          // padding: 10,
+                          width: "100%",
+                        }}
+                      >
+                        <View
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "20px",
+
+                            borderRight: "1px solid black",
+                            // padding: 10,
+                            fontSize: 12,
+                            backgroundColor: "gray",
+                            color: "white",
+                          }}
+                        >
+                          <Text>{index + 1}</Text>
+                        </View>
+                        <View
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            flexGrow: 1,
+                            padding: 8,
+                            fontSize: 12,
+                            justifyContent: "center",
+                            // rowGap: 5,
+                            // color: "blue",
+                          }}
+                        >
+                          <Text>{multiplicationQuestion.firstNumber}</Text>
+                          <Text> X </Text>
+                          <Text>{multiplicationQuestion.secondNumber}</Text>
+                          <Text> = </Text>
+                          <Text
+                            style={{
+                              color: "blue",
+                            }}
+                          >
+                            {/* {multiplicationQuestion.answer} */}
+                            &nbsp;
+                          </Text>
+                        </View>
+                      </View>
+                    ))}
+                </View>
+                <View
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    flexDirection: "column",
+                    rowGap: 5,
+                    columnGap: 10,
+                    padding: 10,
+                    flex: 1,
+                  }}
+                >
+                  {multiplicationQuestions
+                    .slice(multiplicationQuestions.length / 2)
+                    .map((multiplicationQuestion, index) => (
+                      <View
+                        key={multiplicationQuestion.id}
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          border: "1px solid black",
+                          // padding: 10,
+                          width: "100%",
+                          // justifyContent: "center",
+                          // alignItems: "center",
+                        }}
+                      >
+                        <View
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "20px",
+                            borderRight: "1px solid black",
+                            // padding: 10,
+                            fontSize: 12,
+                            backgroundColor: "gray",
+                            color: "white",
+                          }}
+                        >
+                          <Text>
+                            {multiplicationQuestions.length / 2 + index + 1}
+                          </Text>
+                        </View>
+                        <View
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            flexGrow: 1,
+                            padding: 8,
+                            fontSize: 12,
+                            justifyContent: "center",
+                            // color: "blue",
+                          }}
+                        >
+                          <Text>{multiplicationQuestion.firstNumber}</Text>
+                          <Text> X </Text>
+                          <Text>{multiplicationQuestion.secondNumber}</Text>
+                          <Text> = </Text>
+                          <Text
+                            style={{
+                              color: "blue",
+                            }}
+                          >
+                            {/* {multiplicationQuestion.answer} */}
+                            &nbsp;
+                          </Text>
+                        </View>
+                      </View>
+                    ))}
+                </View>
+              </View>
+            </View>
+          </View>
+          <View style={styles.secondPart}>
+            <Text style={styles.header}>Visual</Text>
+            <View
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                flexDirection: "row",
+                rowGap: 10,
+                columnGap: 10,
+                padding: 10,
+              }}
+            >
+              {visualQuestions.map((abacusQuestion, index) => (
+                <View
+                  key={abacusQuestion.id}
+                  style={{
+                    width: "40px",
+                    backgroundColor: "white",
+                    color: "white",
+                  }}
+                >
+                  <View
+                    style={{
+                      backgroundColor: "gray",
+                      color: "white",
+                      border: "2px solid black",
+                      fontSize: 12,
+                    }}
+                  >
+                    <Text style={{ textAlign: "center" }}>{index + 1}</Text>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      // padding: 10,
+                      border: "2px solid black",
+                      paddingRight: 10,
+                      paddingLeft: 10,
+                    }}
+                  >
+                    {abacusQuestion.numbers.map((number, numberIndex) => (
+                      <View
+                        key={numberIndex}
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          fontSize: 15,
+                          // textAlign: "right",
+                          // alignItems: "flex-end",
+                          justifyContent: "flex-end",
+                          color: "black",
+                        }}
+                      >
+                        <Text>{number}</Text>
+                      </View>
+                    ))}
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      backgroundColor: "white",
+                      color: "blue",
+                      fontWeight: "bold",
+                      border: "2px solid black",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      fontSize: 13,
+                    }}
+                  >
+                    <Text>&nbsp;</Text>
+                  </View>
+                </View>
+              ))}
+            </View>
+            {/* show the random quote */}
+            {/* <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: 10,
+              }}
+            >
+              <Text style={{ fontSize: 12 }}>
+                {randomQuote.text} - {randomQuote.author}
+              </Text>
+            </View> */}
+          </View>
+        </Page>
+      </Document>
+    );
+  };
+
   const navigate = useNavigate();
 
   return (
@@ -1251,7 +1592,15 @@ function App() {
             onClick={async () => {
               getRandomQuote();
               const blob = await pdf(<MyPDF />).toBlob();
-              saveAs(blob, "todayshomework.pdf");
+              saveAs(
+                blob,
+                `${new Date().toLocaleDateString()}_abacus_page.pdf`
+              );
+              const blob2 = await pdf(<MyPDfWithoutAnswers />).toBlob();
+              saveAs(
+                blob2,
+                `${new Date().toLocaleDateString()}_abacus_page_without_answers.pdf`
+              );
             }}
           >
             Download PDF
@@ -1259,7 +1608,7 @@ function App() {
         </div>
       </div>
       {/* <PDFViewer className="h-screen w-screen">
-        <MyPDF />
+        <MyPDfWithoutAnswers />
       </PDFViewer> */}
     </>
   );
