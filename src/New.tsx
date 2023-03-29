@@ -2204,9 +2204,9 @@ function New() {
           </button>
         </div>
       </div>
-      <PDFViewer className="h-screen w-screen">
+      {/* <PDFViewer className="h-screen w-screen">
         <MyPDFWithoutAnswers />
-      </PDFViewer>
+      </PDFViewer> */}
     </>
   );
 }
