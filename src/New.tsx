@@ -33,305 +33,310 @@ interface Quote {
 }
 
 function New() {
-  // const [abacusQuestions, setAbacusQuestions] = useState<Question[]>([
-  //   {
-  //     id: 1,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 2,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 3,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 4,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 5,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 6,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 7,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 8,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 9,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 10,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 11,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 12,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 13,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 14,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 15,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 16,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  // ]);
-  // const [visualQuestions, setVisualQuestions] = useState<Question[]>([
-  //   {
-  //     id: 1,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 2,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 3,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 4,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 5,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 6,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 7,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 8,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 9,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 10,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 11,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 12,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 13,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 14,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 15,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  //   {
-  //     id: 16,
-  //     numbers: [28, 27, -7, 90, 78],
-  //     answer: 145,
-  //   },
-  // ]);
-  // const [multiplicationQuestions, setMultiplicationQuestions] = useState<
-  //   MultiplicationQuestion[]
-  // >([
-  //   {
-  //     id: 1,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 2,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 3,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 4,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 5,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 6,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 7,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 8,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 9,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  //   {
-  //     id: 10,
-  //     firstNumber: 330,
-  //     secondNumber: 2,
-  //     answer: 660,
-  //   },
-  // ]);
-  // const [visualMultiplicationQuestions, setVisualMultiplicationQuestions] =
-  //   useState<MultiplicationQuestion[]>([
-  //     {
-  //       id: 1,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 2,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 3,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 4,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 5,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 6,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 7,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 8,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 9,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //     {
-  //       id: 10,
-  //       firstNumber: 330,
-  //       secondNumber: 2,
-  //       answer: 660,
-  //     },
-  //   ]);
-
-  const [abacusQuestions, setAbacusQuestions] = useState<Question[]>([]);
+  const [abacusQuestions, setAbacusQuestions] = useState<Question[]>([
+    {
+      id: 1,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 2,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 3,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 4,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 5,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 6,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 7,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 8,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 9,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 10,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 11,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 12,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 13,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 14,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 15,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 16,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+  ]);
+  const [visualQuestions, setVisualQuestions] = useState<Question[]>([
+    {
+      id: 1,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 2,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 3,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 4,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 5,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 6,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 7,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 8,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 9,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 10,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 11,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 12,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 13,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 14,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 15,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+    {
+      id: 16,
+      numbers: [28, 27, -70, 90, 78],
+      answer: 145,
+    },
+  ]);
   const [multiplicationQuestions, setMultiplicationQuestions] = useState<
     MultiplicationQuestion[]
-  >([]);
-  const [visualQuestions, setVisualQuestions] = useState<Question[]>([]);
+  >([
+    {
+      id: 1,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 2,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 3,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 4,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 5,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 6,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 7,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 8,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 9,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+    {
+      id: 10,
+      firstNumber: 330,
+      secondNumber: 2,
+      answer: 660,
+    },
+  ]);
   const [visualMultiplicationQuestions, setVisualMultiplicationQuestions] =
-    useState<MultiplicationQuestion[]>([]);
+    useState<MultiplicationQuestion[]>([
+      {
+        id: 1,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 2,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 3,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 4,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 5,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 6,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 7,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 8,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 9,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+      {
+        id: 10,
+        firstNumber: 330,
+        secondNumber: 2,
+        answer: 660,
+      },
+    ]);
+
+  // const [abacusQuestions, setAbacusQuestions] = useState<Question[]>([]);
+  // const [multiplicationQuestions, setMultiplicationQuestions] = useState<
+  //   MultiplicationQuestion[]
+  // >([]);
+  // const [visualQuestions, setVisualQuestions] = useState<Question[]>([]);
+  // const [visualMultiplicationQuestions, setVisualMultiplicationQuestions] =
+  //   useState<MultiplicationQuestion[]>([]);
+
+  console.log("abacusQuestions", abacusQuestions);
+  console.log("multiplicationQuestions", multiplicationQuestions);
+  console.log("visualQuestions", visualQuestions);
+  console.log("visualMultiplicationQuestions", visualMultiplicationQuestions);
 
   const calculateAbacusAnswer = (abacusQuestion: Question) => {
     const value = document.getElementById(
@@ -680,8 +685,8 @@ function New() {
       letterSpacing: 2,
       width: "70px",
       border: "1px solid black",
-      marginLeft: "auto",
-      marginRight: "auto",
+      // marginLeft: "10px",
+      // marginRight: "auto",
       marginBottom: 10,
       marginTop: 10,
       borderRadius: 10,
@@ -709,7 +714,10 @@ function New() {
         <Page size={"A4"} orientation="landscape" style={styles.page}>
           <View style={styles.firstPart}>
             <View>
-              <Text style={styles.header}>Abacus</Text>
+              <View style={{ display: "flex", flexDirection: "row" }}>
+                <Text style={styles.header}>+ & - </Text>
+                <Text style={styles.header}>Abacus</Text>
+              </View>
               <View
                 style={{
                   display: "flex",
@@ -1209,7 +1217,27 @@ function New() {
           <View style={styles.page}>
             <View style={styles.firstPart}>
               <View>
-                <Text style={styles.header}>Abacus</Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    // justifyContent: "space-between",
+                    marginHorizontal: 10,
+                  }}
+                >
+                  <Text style={{ ...styles.header, alignSelf: "flex-start" }}>
+                    + & -{" "}
+                  </Text>
+                  <Text
+                    style={{
+                      ...styles.header,
+                      alignSelf: "center",
+                      marginLeft: "100px",
+                    }}
+                  >
+                    Abacus
+                  </Text>
+                </View>
                 <View
                   style={{
                     display: "flex",
@@ -1245,10 +1273,12 @@ function New() {
                           flexDirection: "column",
                           // padding: 10,
                           border: "2px solid black",
-                          // justifyContent: "flex-end",
-                          alignItems: "flex-end",
+                          justifyContent: "flex-start",
+                          // alignItems: "flex-start",
                           paddingRight: 10,
-                          paddingLeft: 10,
+                          // paddingLeft: 10,
+                          // columnGap: 5,
+                          rowGap: 5,
                         }}
                       >
                         {abacusQuestion.numbers.map((number, numberIndex) => (
@@ -1262,6 +1292,7 @@ function New() {
                               // alignItems: "flex-end",
                               // justifyContent: "flex-end",
                               color: "black",
+                              alignSelf: "flex-end",
                             }}
                           >
                             <Text>{number}</Text>
@@ -1277,7 +1308,7 @@ function New() {
                           justifyContent: "center",
                           alignItems: "center",
                           color: "blue",
-                          fontSize: 13,
+                          fontSize: 20,
                         }}
                       >
                         <Text>&nbsp;</Text>
@@ -1292,16 +1323,24 @@ function New() {
                 }}
               ></View>
               <View>
-                <Text style={{ ...styles.header, width: "150px" }}>
-                  Multiplications
+                <Text
+                  style={{
+                    ...styles.header,
+                    width: "150px",
+                    marginLeft: "10px",
+                  }}
+                >
+                  X
                 </Text>
                 <View
                   style={{
                     display: "flex",
                     flexWrap: "wrap",
                     flexDirection: "row",
-                    // rowGap: 10,
+                    // rowGap: 10,/
                     // columnGap: 10,
+                    // padding: 5,
+                    // sizin,
                   }}
                 >
                   {/* show half questions left and half questions right */}
@@ -1311,8 +1350,8 @@ function New() {
                       flexWrap: "wrap",
                       flexDirection: "column",
                       rowGap: 5,
-                      columnGap: 10,
-                      padding: 10,
+                      columnGap: 5,
+                      // padding: 5,
                       flex: 1,
                     }}
                   >
@@ -1353,7 +1392,7 @@ function New() {
                               flexGrow: 1,
                               padding: 8,
                               fontSize: 12,
-                              justifyContent: "center",
+                              justifyContent: "flex-start",
                               // rowGap: 5,
                               // color: "blue",
                             }}
@@ -1380,8 +1419,8 @@ function New() {
                       flexWrap: "wrap",
                       flexDirection: "column",
                       rowGap: 5,
-                      columnGap: 10,
-                      padding: 10,
+                      columnGap: 5,
+                      // padding: 5,
                       flex: 1,
                     }}
                   >
@@ -1425,7 +1464,7 @@ function New() {
                               flexGrow: 1,
                               padding: 8,
                               fontSize: 12,
-                              justifyContent: "center",
+                              justifyContent: "flex-start",
                               // color: "blue",
                             }}
                           >
@@ -1450,7 +1489,27 @@ function New() {
             </View>
             <View style={styles.secondPart}>
               <View>
-                <Text style={styles.header}>Visual</Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    // justifyContent: "space-between",
+                    marginHorizontal: 10,
+                  }}
+                >
+                  <Text style={{ ...styles.header, alignSelf: "flex-start" }}>
+                    + & -{" "}
+                  </Text>
+                  <Text
+                    style={{
+                      ...styles.header,
+                      alignSelf: "center",
+                      marginLeft: "100px",
+                    }}
+                  >
+                    Visual
+                  </Text>
+                </View>
                 <View
                   style={{
                     display: "flex",
@@ -1486,10 +1545,12 @@ function New() {
                           flexDirection: "column",
                           // padding: 10,
                           border: "2px solid black",
-                          // justifyContent: "flex-end",
-                          alignItems: "flex-end",
+                          justifyContent: "flex-start",
+                          // alignItems: "flex-start",
                           paddingRight: 10,
-                          paddingLeft: 10,
+                          // paddingLeft: 10,
+                          // columnGap: 5,
+                          rowGap: 5,
                         }}
                       >
                         {abacusQuestion.numbers.map((number, numberIndex) => (
@@ -1503,6 +1564,7 @@ function New() {
                               // alignItems: "flex-end",
                               // justifyContent: "flex-end",
                               color: "black",
+                              alignSelf: "flex-end",
                             }}
                           >
                             <Text>{number}</Text>
@@ -1518,7 +1580,7 @@ function New() {
                           justifyContent: "center",
                           alignItems: "center",
                           color: "blue",
-                          fontSize: 13,
+                          fontSize: 20,
                         }}
                       >
                         <Text>&nbsp;</Text>
@@ -1533,8 +1595,15 @@ function New() {
                 }}
               ></View>
               <View>
-                <Text style={{ ...styles.header, width: "150px" }}>
-                  Multiplications
+                <Text
+                  style={{
+                    ...styles.header,
+                    width: "auto",
+                    marginLeft: "10px",
+                    marginRight: "10px",
+                  }}
+                >
+                  X
                 </Text>
                 <View
                   style={{
@@ -1552,8 +1621,7 @@ function New() {
                       flexWrap: "wrap",
                       flexDirection: "column",
                       rowGap: 5,
-                      columnGap: 10,
-                      padding: 10,
+                      columnGap: 5,
                       flex: 1,
                     }}
                   >
@@ -1594,7 +1662,7 @@ function New() {
                               flexGrow: 1,
                               padding: 8,
                               fontSize: 12,
-                              justifyContent: "center",
+                              justifyContent: "flex-start",
                               // rowGap: 5,
                               // color: "blue",
                             }}
@@ -1621,8 +1689,7 @@ function New() {
                       flexWrap: "wrap",
                       flexDirection: "column",
                       rowGap: 5,
-                      columnGap: 10,
-                      padding: 10,
+                      columnGap: 5,
                       flex: 1,
                     }}
                   >
@@ -1666,7 +1733,7 @@ function New() {
                               flexGrow: 1,
                               padding: 8,
                               fontSize: 12,
-                              justifyContent: "center",
+                              justifyContent: "flex-start",
                               // color: "blue",
                             }}
                           >
