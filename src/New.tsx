@@ -460,17 +460,12 @@ function New() {
         },
       ]);
     } else if (event.keyCode === 115) {
-      // event.preventDefault();
-      // setAbacusQuestions([]);
-      // setVisualQuestions([]);
-      // setMultiplicationQuestions([]);
       event.preventDefault();
       setVisualMultiplicationQuestions([
         ...visualMultiplicationQuestions,
         {
           id: visualMultiplicationQuestions.length + 1,
           firstNumber: 0,
-
           secondNumber: 0,
           answer: 0,
         },
@@ -489,7 +484,12 @@ function New() {
     return () => {
       document.removeEventListener("keydown", handleKeyDown, false);
     };
-  }, [abacusQuestions, visualQuestions, multiplicationQuestions]);
+  }, [
+    abacusQuestions,
+    visualQuestions,
+    multiplicationQuestions,
+    visualMultiplicationQuestions,
+  ]);
 
   const calculateVisualAnswer = (visualQuestion: Question) => {
     const value = document.getElementById(
