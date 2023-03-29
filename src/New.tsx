@@ -715,7 +715,7 @@ function New() {
           <View style={styles.firstPart}>
             <View>
               <View style={{ display: "flex", flexDirection: "row" }}>
-                <Text style={styles.header}>+ & - </Text>
+                <Text style={{ ...styles.header, width: "50px" }}>+ & - </Text>
                 <Text style={styles.header}>Abacus</Text>
               </View>
               <View
@@ -1225,7 +1225,13 @@ function New() {
                     marginHorizontal: 10,
                   }}
                 >
-                  <Text style={{ ...styles.header, alignSelf: "flex-start" }}>
+                  <Text
+                    style={{
+                      ...styles.header,
+                      alignSelf: "flex-start",
+                      width: "70px",
+                    }}
+                  >
                     + & -{" "}
                   </Text>
                   <Text
@@ -1326,7 +1332,7 @@ function New() {
                 <Text
                   style={{
                     ...styles.header,
-                    width: "150px",
+                    width: "70px",
                     marginLeft: "10px",
                   }}
                 >
@@ -1497,7 +1503,13 @@ function New() {
                     marginHorizontal: 10,
                   }}
                 >
-                  <Text style={{ ...styles.header, alignSelf: "flex-start" }}>
+                  <Text
+                    style={{
+                      ...styles.header,
+                      alignSelf: "flex-start",
+                      width: "70px",
+                    }}
+                  >
                     + & -{" "}
                   </Text>
                   <Text
@@ -1598,9 +1610,9 @@ function New() {
                 <Text
                   style={{
                     ...styles.header,
-                    width: "auto",
+                    width: "70px",
                     marginLeft: "10px",
-                    marginRight: "10px",
+                    // marginRight: "10px",
                   }}
                 >
                   X
@@ -2192,9 +2204,9 @@ function New() {
           </button>
         </div>
       </div>
-      {/* <PDFViewer className="h-screen w-screen">
+      <PDFViewer className="h-screen w-screen">
         <MyPDFWithoutAnswers />
-      </PDFViewer> */}
+      </PDFViewer>
     </>
   );
 }
